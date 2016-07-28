@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">InstantSDK</string>
+
+    <string name="t_msg">
+        CREATE TABLE MsgData (
+          `_id` VARCHAR,
+          `FromUserId` INTEGER,
+          `ToUserId` INTEGER,
+          `CreateTime` VARCHAR,
+          `MsgType` INTEGER,
+          `Content` TEXT,
+          `IsRead` INTEGER,
+          `OtherNote` VARCHAR
+        );
+    </string>
+</resources>

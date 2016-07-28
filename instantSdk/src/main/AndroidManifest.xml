@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.panxiong.instant">
+
+    <!--访问网络-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--检测网络-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--手机震动-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!--开机自启-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!--持续性活动-->
+    <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY" />
+
+    <application>
+        <service android:name=".service.CoreService" />
+        <service
+            android:name=".service.GuardService"
+            android:process=":GUARD" />
+
+        <!--闹钟广播接收器-->
+        <receiver android:name=".receiver.AlarmBroadcastReceiver" />
+        <!--Service销毁广播接收器-->
+        <receiver android:name=".receiver.ServiceDestroyReceiver">
+            <intent-filter>
+                <action android:name="com.receiver.SERVICE_DESTROY" />
+            </intent-filter>
+        </receiver>
+        <!--自定义系统广播接收器-->
+        <receiver android:name=".receiver.CustomBroadcastReceiver">
+            <intent-filter>
+                <!--开机广播-->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!--网络改变-->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <!--收到了新的网络通知-->
+                <action android:name="android.intent.action.NETWORK_TICKLE_RECEIVED" />
+                <!--信号改变-->
+                <action android:name="android.intent.action.SIG_STR" />
+                <!--电话服务状态改变-->
+                <action android:name="android.intent.action.SERVICE_STATE" />
+                <!--电话状态已经改变-->
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <!--屏幕点亮-->
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <!--屏幕关闭-->
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <!--日期被改变-->
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <!--电话的数据连接状态已经改变-->
+                <action android:name="android.intent.action.DATA_STATE" />
+                <!--电话的收发数据的状态已经改变-->
+                <action android:name="android.intent.action.DATA_ACTIVITY" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.InstantUsersActivity" />
+        <activity
+            android:name=".activity.InstantChatActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+    </application>
+
+</manifest>

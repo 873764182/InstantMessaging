@@ -1,0 +1,52 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* aapt\
+* aapt\AndroidManifest.xml
+* jars\
+* jars\classes.jar
+* jni\
+* jni\arm64-v8a\
+* jni\arm64-v8a\libfileobserver.so
+* jni\armeabi-v7a\
+* jni\armeabi-v7a\libfileobserver.so
+* jni\armeabi\
+* jni\armeabi\libfileobserver.so
+* jni\mips64\
+* jni\mips64\libfileobserver.so
+* jni\mips\
+* jni\mips\libfileobserver.so
+* jni\x86\
+* jni\x86\libfileobserver.so
+* jni\x86_64\
+* jni\x86_64\libfileobserver.so
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => sNAPSHOT\src\main\AndroidManifest.xml
+* assets\ => sNAPSHOT\src\main\assets
+* res\ => sNAPSHOT\src\main\res
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
